@@ -33,6 +33,14 @@ class Solution {
     //   }
     // }
 
+    
+ /**
+ * Returns nothing. 
+ * The outPutFileName specify the absolute path of the output file.
+ *
+ * @param  outPutFileName  the path (the absolute paht, including the name) of the output file
+ * @return      void
+ */
     private void writeMapOutput(String outPutFileName) {
         try {
             File outputFile = new File(outPutFileName);
@@ -66,6 +74,14 @@ class Solution {
         }
     }
 
+ /**
+ * Returns nothing. 
+ * The outPutFileName specify the absolute path of the output file.
+ * 
+ * @param  outPutFileName  the path (the absolute paht, including the name) of the output file
+ * @param  strList         the string list for the outputs that are different from most of the outputs
+ * @return      void
+ */
     private void writeUnnormalOutput(String outPutFileName, List<String> strList) {
         try {
             File outputFile = new File(outPutFileName);
@@ -86,6 +102,14 @@ class Solution {
         }
     }
 
+ /**
+ * Returns a StringBuilder. 
+ * The line is the the input string, and idx specify starting index of the string inside the double quotes.
+ * 
+ * @param  line            the input string that contains double qoutes
+ * @param  idx             the starting index of inside double qoutes in the line 
+ * @return      a StringBuilder that contains the content inside the double qoutes
+ */
     private StringBuilder parseStrInsideDoubleQoutes(String line, Integer idx) {
         StringBuilder sb = new StringBuilder();
         int length = line.length();
@@ -105,10 +129,17 @@ class Solution {
                 idx++;
             }
         }
-
         return sb;
     }
 
+ /**
+ * Returns an int, -1 means the data is invalid, 1 means everything is fine. 
+ * Will parse the lastname and first name of the precribers, the drug name and the cost of the drug
+ * 
+ * @param  columns         the columns to store the lastname, firstname, drugname, and cost
+ * @param  line            a line (an entry) from the dataset
+ * @return     an int to represent the parse result, -1 means invalid entry
+ */
     private int parseEntry(String[] columns, String line) {
         String lastName = null;
         String fisrtName = null;
@@ -203,6 +234,14 @@ class Solution {
 
         return 1;
     }
+    
+ /**
+ * Returns nothing
+ * Will read the csv file and process the data inside the method
+ * 
+ * @param  fileName         the path of the input data
+ * @return     void
+ */
     private void readFile(String fileName) {
         BufferedReader br = null;
         try{
@@ -247,13 +286,16 @@ class Solution {
             System.out.println(e);
         }
     }
+    
+    // main method, starting point of the whole program
+    
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(args.length);
         System.out.println(args[0]);
         System.out.println(args[1]);
 
-        if (args.length < 2) {
+        if (args.length < 2) { // handles invalid inputs
             System.out.println("Please type in the input file and the output file.");
             System.out.println("Example Usage: Java -Xmx4g Solution path/input.txt path/output.txt");
             return;
