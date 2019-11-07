@@ -9,31 +9,6 @@ import java.io.FileWriter;
 class Solution {
 
     HashMap<String,DataEntry> map = new HashMap<String,DataEntry>();
-
-    // private void writeOutput(String outPutFileName, PriorityQueue<DataEntry> pq) {
-    //   try {
-    //     File outputFile = new File(outPutFileName);
-    //     outputFile.createNewFile();
-    //     BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-    //     writer.write("drug_name,num_prescriber,total_cost");
-    //     writer.newLine();
-    //     while(pq.size() != 0) {
-    //       DataEntry de = pq.poll();
-    //       writer.write(de.name + "," + de.prescriberSet.size() + "," + de.totalCost);
-    //       writer.newLine();
-    //     }
-    //     writer.flush();
-    //     writer.close();
-    //   } catch(FileNotFoundException e) {
-    //     System.out.println("File not found.");
-    //     System.exit(1);
-    //   } catch(IOException e) {
-    //     System.out.println("Something is wrong.");
-    //     System.exit(1);
-    //   }
-    // }
-
-    
  /**
  * Returns nothing. 
  * The outPutFileName specify the absolute path of the output file.
@@ -278,7 +253,6 @@ class Solution {
                         map.put(name,de);
                     }
                 }
-                //writeUnnormalOutput("../insight_testsuite/tests/test_2/input/unNormal.txt", unNormalList);
             }
         } catch(FileNotFoundException e) {
             System.out.println("File not found.");
@@ -288,7 +262,6 @@ class Solution {
     }
     
     // main method, starting point of the whole program
-    
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(args.length);
