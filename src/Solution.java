@@ -6,27 +6,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-class DataEntry {
-    String name;
-    Set<String> prescriberSet;
-    double totalCost;
-    public DataEntry(String name, Set<String> people, double cost) {
-        this.name = name;
-        prescriberSet = people;
-        totalCost = cost;
-    }
-}
-
-class DataEntryComparator implements Comparator<DataEntry> {
-    public int compare(DataEntry a, DataEntry b) {
-        int compareResult = Double.compare(b.totalCost, a.totalCost);
-        if (compareResult == 0) {
-            compareResult = a.name.compareTo(b.name);
-        }
-        return compareResult;
-    }
-}
-
 class Solution {
 
     HashMap<String,DataEntry> map = new HashMap<String,DataEntry>();
