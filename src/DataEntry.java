@@ -5,7 +5,9 @@ import java.util.*;
 * DataEntry class represents the data entries in the pharmacy dataset.
 * There are three properties in the class, a name of the drug, a set of prescribers, and the total cost of this drug that
 * caused by the prescriptions in the whole dataset.
-*
+* 
+* It is good practice to make the properties private and set up the setters and getters for those private fields.
+* Because of the time constraints of the coding challenage, I did do it that way.
 */
 
 class DataEntry {
